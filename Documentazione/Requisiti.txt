@@ -1,0 +1,10 @@
+MUST: 
+- Misurazione battito cardiaco 
+- Rilevamento della temperatura 
+- Test riflessi 
+
+Should: 
+- Ossigenazione del sangue 
+
+May: 
+- Salvare il tutto su pdf o su file di testo

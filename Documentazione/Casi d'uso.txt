@@ -1,0 +1,6 @@
+TEMPLATE { 
+Autore: Mario
+Nome/tipo caso d'uso: Acquisto di qualcosa
+Sequenza eventi (sia sistema, sia utente) (caso sempre corretto): punto1; punto2; punto 3; ....
+Errori possibili: Password sbagliata nel login, ...
+}
