@@ -1,0 +1,13 @@
+Autore: Lucidera Luca
+Nome: Creazione/Login di un account
+Sequenza eventi:
+- Utente che non ha un account si registra sul sito tramite email, password, nome, cognome, numero telefono
+- Il sistema controlla la validità delle informazioni
+- il sistema le salva in un file di testo
+- il sistema lo rimanda nella sezione dedicata all'utente e alle sue impostazioni
+- l'utente ora può fare le misurazioni che vuole tramite le apposite schermate
+Errori:
+- Utente inserisce una mail / password non valide nella registrazione
+- Il sistema riferisce all'utente dell'errore in modo specifico
+- Utente prova a fare la login anche se non ha un account
+- Il sistema gli dice che prima di fare la login deve registrarsi se non ha un account
