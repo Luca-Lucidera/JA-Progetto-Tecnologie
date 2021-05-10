@@ -1,0 +1,11 @@
+Autore: Mornatta Samuele
+Nome: Eseguire test battito cardiaco e visualizzazione risultati
+Sequenza eventi:
+- Utente Esegue Login account
+- Il sistema apre una nuova pagina
+- L'utente preme sul bottone "Inizia Test Battito cardiaco"
+- Il sistema suggerisce all'utente di posare un dito sul sensore di battito cardiaco
+- Il sistema inizia il test misurando il battito cardiaco ed infine lo visualizza a schermo
+Sequenza errori:
+- L'utente non posa il dito sul sensore prima di iniziare il test
+- L'utente solleva il dito dal sensore durante il test
