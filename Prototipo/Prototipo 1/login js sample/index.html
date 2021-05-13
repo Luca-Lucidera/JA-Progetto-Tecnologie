@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="ht">
     <head>
         <title>index</title>
         <script src="script.js" type="text/javascript"></script>
@@ -11,6 +11,7 @@
         <p>Inserire Password <input type="password" id="password"></p>
         <input type="button" onclick="manda()" id="m"value="invia i dati inseriti"></input>
         <p><input type="button" id="alberto" onclick="export_csv()" value="crea un csv"></p>
-        <input type="file" id="uploadfile" onChange="readImage(this)">
+        <input type="file" id="uploadfile" onChange="readImage(this)"><br>
+        <input type="button" value="login" onclick="logga()">
     </body>
 </html>

@@ -60,9 +60,14 @@ function manda() {
         (email = document.getElementById("email").value),
         (password = document.getElementById("password").value);
 
-    if(nome.search(/[-+]?[0-9]*\.?[0-9]+/g) == -1 && cognome.search(/[0-9]/g) == -1){
-        if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
-            if(password.length > 8){
+    if (
+        nome.search(/[-+]?[0-9]*\.?[0-9]+/g) == -1 &&
+        cognome.search(/[0-9]/g) == -1
+    ) {
+        if (
+            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)
+        ) {
+            if (password.length > 7) {
                 arrayData[numel] = {
                     nome: document.getElementById("nome").value,
                     cognome: document.getElementById("cognome").value,
@@ -71,16 +76,24 @@ function manda() {
                 };
                 numel++;
                 alert("dati inseriti");
-            }else{
+            } else {
                 alert("la password deve contenere più di 8 caratteri");
             }
-        }
-        else{
+        } else {
             alert("Ricontrolla la mail");
         }
-    }
-    else
-    {
+    } else {
         alert("il nome e il cognome non devono contenere dei numeri");
+    }
+}
+
+function logga() {
+    for(var i = 0; i < arrayData.length - 1; i++){
+        if(arrayData[i][2] == document.getElementById("email").value && arrayData[i][3] == document.getElementById("password").value){
+            alert("login effettuato");
+            document.getElementById("ht").innerHTML='<object type="text/html" data="loginEffettuato.html" ></object>';
+        }
+        alert(document.getElementById("nome").value);
+        alert("Non sei loggato, registrati!");//il primo indica la cella del vettore, il secondo indica il nome
     }
 }
