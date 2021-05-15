@@ -1,0 +1,16 @@
+autore: FrigerioMatteo
+Caso d'uso: test dei riflessi 1
+Sequenza:
+Si accende un led
+Premere il bottone in corrispondenza prima del tempo limite
+Errori: 
+Premuto bottone sbagliato, il test finisce
+Non premuto/ non premuto in tempo il test finisce
+
+Caso d'uso: test dei riflessi 2
+Sequenza:
+Si accende un led rgb
+Premere il bottone in corrispondenza del led blu prima del tempo limite
+Errori: 
+Premuto bottone sbagliato, il test finisce
+Non premuto/ non premuto in tempo il test finisce
