@@ -8,5 +8,9 @@ socket.on('stuffwithserial', function (data) {
     }
     else if (dati.charAt(0) == 'S'){
         document.getElementById("Ossigenazione").value = valore;
+    }else if (dati.charAt(0) == 'R'){
+        document.getElementById("Riflessi").value = valore;
+    }else if (dati.charAt(0) == 'T'){
+        document.getElementById("Temperatura").value = valore;
     }
 });
