@@ -1,0 +1,17 @@
+PERSONAS 1:
+Nome: Mario
+Età: 80 anni
+Sesso: Maschio
+Stile di vita: Sedentario, poca attività fisica
+Capacità motorie: limitate a causa dell'età
+Bisogni: rimanere in salute senza pensieri
+Interessi e hobbies: seguire le serie tv, leggere libri e buon gustaio
+
+PERSONAS 2:
+Nome: Chiara
+Età: 38 anni
+Sesso: Femmina
+Stile di vita: frenetico, sempre in giro per lavoro
+Bisogni: tenersi in forma perdendo il minor tempo possibile
+Interessi: lavorare velocemente ed efficentemente
+Hobbies: fare sport nel tempo libero
