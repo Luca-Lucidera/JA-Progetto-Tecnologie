@@ -1,0 +1,11 @@
+AUTORE: VILLA RICCARDO
+NOME:misurazione temperatura e visualizzazione risultati
+SEQUENZA EVENTI:
+- account di accesso esegue utente
+- il sistema apre una nuova pagina
+- l'utente preme sul bottone "inizia misurazione temperatura"
+- sistema suggerisce di posare dito sul sensore
+- sistema inizia la misurazione e visualizza a schermo
+ERRORI:
+- utente non posa il dito
+- utente toglie il dito 
