@@ -4,7 +4,7 @@ var obj_csv = {
     size: 0,
     dataFile: [],
 };
-
+var nome,cognome;
 function export_csv() {
     //crea il csv vero e proprio
     let csv = "";
@@ -23,7 +23,7 @@ function export_csv() {
     let hiddenElement = document.createElement("a");
     hiddenElement.href = csvUrl;
     hiddenElement.target = "_blank";
-    hiddenElement.download = "data" + ".csv";
+    hiddenElement.download = "utenti_registrati" + ".csv";
     hiddenElement.click();
 }
 
@@ -31,6 +31,7 @@ function export_csv() {
 function readImage(input) {
     //console.log(input)
     if (input.files && input.files[0]) {
+        //console.log(input.files[0]);
         let reader = new FileReader();
         reader.readAsBinaryString(input.files[0]);
         reader.onload = function (e) {
@@ -58,7 +59,7 @@ function manda() {
     (nome = document.getElementById("nome").value),
         (cognome = document.getElementById("cognome").value),
         (email = document.getElementById("email").value),
-        (password = document.getElementById("password").value);
+        (password = document.getElementById("pass").value);
 
     if (
         nome.search(/[-+]?[0-9]*\.?[0-9]+/g) == -1 &&
@@ -72,7 +73,7 @@ function manda() {
                     nome: document.getElementById("nome").value,
                     cognome: document.getElementById("cognome").value,
                     email: document.getElementById("email").value,
-                    password: document.getElementById("password").value,
+                    password: document.getElementById("pass").value,
                 };
                 numel++;
                 alert("dati inseriti");
@@ -88,12 +89,26 @@ function manda() {
 }
 
 function logga() {
+    utenteRegistrato = false;
     for(var i = 0; i < arrayData.length - 1; i++){
-        if(arrayData[i][2] == document.getElementById("email").value && arrayData[i][3] == document.getElementById("password").value){
+        if(arrayData[i][2] == document.getElementById("email").value && arrayData[i][3] == document.getElementById("pass").value){
             alert("login effettuato");
-            document.getElementById("ht").innerHTML='<object type="text/html" data="loginEffettuato.html" ></object>';
+            utenteRegistrato = true;
+            nome = document.getElementById("nome").value;
+            cognome = document.getElementById("cognome").value;
+            localStorage.setItem("nome",nome);
+            localStorage.setItem("cognome",cognome);
+            window.location.href = "loginEffettuato.html";
+            //console.log(nomeLogEff," ",cognomeLogEff);
+            //document.getElementById("ht").innerHTML='<object type="text/html" data="loginEffettuato.html" ></object>';
         }
-        alert(document.getElementById("nome").value);
-        alert("Non sei loggato, registrati!");//il primo indica la cella del vettore, il secondo indica il nome
     }
+    if(utenteRegistrato == false){
+        alert('Utente non registrato, premere pulsante "REGISTRATI"!');
+    }
+}
+
+function loginEffettuato(){
+    document.getElementById("nomeBenvenuto").innerHTML = localStorage.getItem("nome");
+    document.getElementById("cognomeBenvenuto").innerHTML = localStorage.getItem("cognome");
 }
