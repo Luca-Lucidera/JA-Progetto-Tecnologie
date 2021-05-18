@@ -32,16 +32,20 @@ void setup()
 
 void loop()
 {
-  int scelta = Serial.available();
-  int test;
-  if (scelta == 1)
+  if(Serial.available())
   {
-    test = Test1();
+    int scelta = Serial.available();
+    int test;
+    if (scelta == 1)
+    {
+      test = Test1();
+    }
+    else if (scelta == 2)
+    {
+      test = Test2();
+    }
   }
-  else if (scelta == 2)
-  {
-    test = Test2();
-  }
+  
 }
 
 //test led singoli
