@@ -7,7 +7,7 @@ var app = require('http').createServer(handler)
 app.listen(80);
 
 const port = new SerialPort('COM3', {
-    baudRate: 115200
+    baudRate: 9600
 });
 const parser = port.pipe(new Readline());
 
@@ -33,6 +33,8 @@ parser.on('data', function (data) {
 });
 
 //collegamento web -> arduino
-io.on("send",(data)=>{ 
-    port.write(data);
+io.on("connection", (socket) => {
+    socket.on("send", (data) => {
+        port.write(data);
+    });
 });

@@ -8,14 +8,13 @@
             socket.on('stuffwithserial', function (data) {
                 alert(data);
             });
-            function send(data){
-                socket.emit("send",data);
-            }
-            send("ciao");
+            function send(data) {
+                socket.emit("send", data);
+            };
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     </head>
     <body>
-        
+        <button onclick="send('ciao;');">TEST</button>
     </body>
 </html>
