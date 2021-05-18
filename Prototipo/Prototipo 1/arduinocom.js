@@ -31,3 +31,8 @@ parser.on('error', function(err) {
 parser.on('data', function (data) {
     io.emit('stuffwithserial', data);
 });
+
+//collegamento web -> arduino
+io.on("send",(data)=>{ 
+    port.write(data);
+});
