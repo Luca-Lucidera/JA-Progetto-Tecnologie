@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+	<style type="text/css">
+		.sfondo {
+			background-image:
+				linear-gradient(90deg, blu, lightblue);
+		}
+	</style>
+	<script src="scriptLogin.js" type="text/javascript"></script>
+	<script>
+		var socket = io.connect('http://localhost');
+		var valore;
+		var dati;
+		socket.on('stuffwithserial', function (data) {
+			dati = data;
+			valore = dati.substring(1);
+			if (dati.charAt(0) == 'H') {
+				document.getElementById("Battito").innerHTML = valore;
+			}
+			else if (dati.charAt(0) == 'S') {
+				document.getElementById("Ossigenazione").innerHTML = valore;
+			} else if (dati.charAt(0) == 'R') {
+				document.getElementById("Riflessi").innerHTML = valore;
+			} else if (dati.charAt(0) == 'T') {
+				document.getElementById("Temperatura").innerHTML = valore;
+			}
+		});
+		function send(data) {
+			socket.emit("send", data);
+		};
+
+	</script>
+</head>
+
+<body background="sfondo.jpg" onload="loginEffettuato()">
+	<p id="nomeBenvenuto"></p>
+	<p id="cognomeBenvenuto"></p>
+	<form id="domanda">
+		<center>
+			<div class="Logo"><img src="logo.jpg"></div>
+			<div class="Sottotitolo"><img src="test.jpg"></div>
+		</center>
+		<fieldset>
+			<legend>Rilevamento battito cardiaco:</legend>
+			<p> Appoggiando il dito sul sensore verrà calcolato il battito cardiaco</p>
+			<p id="Battito"></p>
+		</fieldset>
+		<center>
+			<p><input type="button" id="invia" value="calcola battito cardiaco" onclick="send('b')">
+		</center>
+		<fieldset>
+			<legend>Rilevamento ossigenazione del sangue:</legend>
+			<p> Appoggiando il dito sul sensore verrà calcolata l'ossigenazione del sangue</p>
+			<p id="Ossigenazione"></p>
+		</fieldset>
+		<center>
+			<p><input type="button" id="invia" value="calcola ossigenazione del sangue" onclick="send('b')">
+		</center>
+		<fieldset>
+			<legend>Rilevamento temperatura:</legend>
+			<p> Appoggiando il dito sul sensore verrà calcolata la temperatura</p>
+			<p id="Riflessi"></p>
+		</fieldset>
+		<center>
+			<p><input type="button" id="invia" value="calcola temperatura" onclick="send('t')">
+		</center>
+		<fieldset>
+			<legend>Test Riflessi:</legend>
+			<p> Verranno accesi dei led e si valuterà la velocità di reazione</p>
+			<p id="Temperatura"></p>
+		</fieldset>
+		<center>
+			<p><input type="button" id="invia" value="inizia test" onclick="send('r')">
+		</center>
+	</form>
+</body>
+
+</html>
