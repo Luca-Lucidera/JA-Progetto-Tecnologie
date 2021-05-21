@@ -1,0 +1,4 @@
+Problema: In questi ultimi tempi, per un motivo o per l'altro è difficile spostarsi di casa per andare dal medico o in ospedale per fare delle visite, magari perché uno non ha tempo, o perché semplicemente non ha voglia di spostarsi da casa.
+Soluzione: Grandhealth ha la soluzione, ovvero un apparecchio che tramite la pressioni di pochi pulsanti da web, sarà possibile visualizzare a schermo i valori vitali e non del corpo
+Team:  Lucidera -> capo, Mornatta -> vicecapo, Villa -> mediatore, Frigerio -> leader
+Roadmap: progetto finale completato, per gli sviluppi futuri si può ampliare tramite altri sensori, per esempio si potrebbe fare il test dell'aspirometria
