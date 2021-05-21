@@ -12,7 +12,7 @@ const port = new SerialPort('COM3', {
 const parser = port.pipe(new Readline());
 
 function handler (req, res) {
-    fs.readFile(__dirname + '/primo.html',
+    fs.readFile(__dirname + '/temperatura.html',
     function (err, data) {
     if (err) {
         res.writeHead(500);
