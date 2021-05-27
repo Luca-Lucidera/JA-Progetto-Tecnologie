@@ -2,7 +2,8 @@ var app = require('http').createServer(handler)
   , io = require('socket.io')(app)
   , fs = require('fs')
   , SerialPort = require('serialport')
-  , Readline = require('@serialport/parser-readline');
+  , Readline = require('@serialport/parser-readline')
+  , url = require('url');
 
 app.listen(80);
 
@@ -12,16 +13,26 @@ const port = new SerialPort('COM3', {
 const parser = port.pipe(new Readline());
 
 function handler (req, res) {
-    fs.readFile(__dirname + '/temperatura.html',
-    function (err, data) {
-    if (err) {
-        res.writeHead(500);
-        return res.end('Error loading index.html');
+    var path = url.parse(req.url).pathname;
+    var fsCallback = function(error, data) {
+        if(error) throw error;
+
+        res.writeHead(200);
+        res.write(data);
+        res.end();
     }
 
-    res.writeHead(200);
-    res.end(data);
-    });
+    switch(path) {
+        case '/login.html':
+            fs.readFile(__dirname + '/Login.html', fsCallback);
+        break;
+        case '/temperatura.html':
+            fs.readFile(__dirname + '/temperatura.html', fsCallback);
+        break;
+        default:
+            fs.readFile(__dirname + '/primo.html', fsCallback);
+        break;
+    }
 }
 
 parser.on('error', function(err) {
